@@ -21,10 +21,10 @@ const NoteMe = React.createClass({
                         <div className="mood">
                             我的心情
                             <ul>
-                                <li><img src="/public/img/mood1.png" alt=""/></li>
-                                <li><img src="/public/img/mood2.png" style={{marginTop:"5px"}} alt=""/></li>
-                                <li><img src="/public/img/mood3.png" style={{marginTop:"7px"}} alt=""/></li>
-                                <li><img src="/public/img/mood4.png" style={{marginTop:"5px"}} alt=""/></li>
+                                <li><img src="./public/img/mood1.png" alt=""/></li>
+                                <li><img src="./public/img/mood2.png" style={{marginTop:"5px"}} alt=""/></li>
+                                <li><img src="./public/img/mood3.png" style={{marginTop:"7px"}} alt=""/></li>
+                                <li><img src="./public/img/mood4.png" style={{marginTop:"5px"}} alt=""/></li>
                             </ul>
                         </div>
                         <div className="note">
