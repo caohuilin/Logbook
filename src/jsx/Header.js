@@ -4,7 +4,7 @@ const Header = React.createClass({
         return (
             <header className="header">
                 <div className="icon">
-                    <img src="/public/img/icon.png" alt=""/>
+                    <img src="./public/img/icon.png" alt=""/>
                 </div>
                 <div className="nav">
                     <NoteBtn />
