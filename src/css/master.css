@@ -1,0 +1,420 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+}
+input,
+select,
+textarea {
+  outline: none;
+  border: none;
+  background: none;
+}
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  display: block;
+}
+.header {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+.icon {
+  margin: 5px 0 3px 40px;
+  float: left;
+  display: inline;
+}
+.nav {
+  float: right;
+  display: inline;
+  height: 50px;
+  line-height: 50px;
+}
+.nav button {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  border-radius: 2px;
+  border: 1px solid #aaa;
+}
+#note {
+  background-color: #007edf;
+  color: #fff;
+  margin: 0 10px;
+}
+#inf {
+  background-color: #f2f2f2;
+  color: #8298B6;
+  margin: 0 20px 0 10px;
+}
+#user {
+  z-index: 2;
+  width: 184px;
+  height: 140px;
+  position: absolute;
+  right: 19px;
+  top: 47px;
+  border: solid 2px #ccc;
+  background: #fff;
+  display: none;
+}
+#user li {
+  list-style: disc;
+  font-size: 14px;
+  padding: 5px 5px;
+  margin-left: 20px;
+  height: 20px;
+}
+.note_me {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.note_me #mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 5;
+}
+.note_me #popup {
+  position: fixed;
+  width: 600px;
+  height: 550px;
+  left: 50%;
+  top: 35px;
+  margin-left: -300px;
+  z-index: 10;
+  background-color: #fff;
+}
+.note_me #popup .title {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 2px solid #ccc;
+  font-size: 25px;
+  color: #555;
+  padding: 0 20px;
+}
+.note_me #popup .icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: url("/public/img/close.png") no-repeat;
+}
+.note_me #popup .con {
+  font-size: 15px;
+  height: 410px;
+  width: 550px;
+  margin: 20px 5px;
+  padding: 5px 20px;
+  color: #666;
+}
+.note_me #popup .con .date input {
+  width: 540px;
+  height: 26px;
+  border: 1px solid #c5c5c5;
+  margin: 10px 0;
+  padding: 2px 5px;
+  background: url(/public/img/date.png) top right no-repeat;
+}
+.note_me #popup .con .mood {
+  margin: 0 5px;
+  width: 100%;
+  height: 116px;
+}
+.note_me #popup .con .mood ul {
+  margin-top: 10px;
+}
+.note_me #popup .con .mood li {
+  float: left;
+  display: inline;
+  margin: 0 8px;
+}
+.note_me #popup .con .note span {
+  display: block;
+}
+.note_me #popup .con .note textarea {
+  width: 540px;
+  height: 137px;
+  border: solid 1px #ccc;
+  margin-top: 5px;
+}
+.note_me #popup button {
+  width: 52px;
+  height: 29px;
+  margin: 10px 30px;
+  border: solid 1px rgba(149, 151, 158, 0.98);
+  border-radius: 2px;
+}
+.add_com_text {
+  display: none;
+  position: fixed;
+  width: 600px;
+  height: 333px;
+  left: 50%;
+  top: 35px;
+  margin-left: -300px;
+  z-index: 10;
+  background-color: #fff;
+}
+.add_com_text .icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: url("/public/img/close.png") no-repeat;
+}
+.add_com_text .title {
+  height: 47px;
+  line-height: 55px;
+  font-size: 20px;
+  color: #555;
+  padding: 5px 29px;
+}
+.add_com_text textarea {
+  display: block;
+  width: 540px;
+  height: 200px;
+  border: solid 1px #ccc;
+  margin: 15px 29px;
+  border-radius: 2px;
+}
+.add_com_text button {
+  margin: 10px 30px;
+}
+#mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 5;
+}
+.content {
+  width: 100%;
+  height: 800px;
+  z-index: 1;
+}
+.leftArea {
+  border-right: 1px solid #ccc;
+  width: 235px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  float: left;
+  display: inline;
+}
+.leftArea .date {
+  margin-top: 20px;
+  margin-left: 15px;
+  border-bottom: solid 1px #E5E5E5;
+}
+.leftArea .c_de {
+  margin: 20px 8px;
+}
+.leftArea .c_de div > li {
+  display: block;
+  line-height: 40px;
+  padding: 10px 20px;
+  padding-right: 0;
+  font-size: 15px;
+  color: #a5a5a5;
+  cursor: pointer;
+}
+.leftArea .c_de div > li:hover {
+  color: #333;
+}
+.leftArea .gd {
+  display: none;
+  margin: 0 20px 10px;
+}
+.leftArea .gd li {
+  cursor: pointer;
+  display: block;
+  line-height: 30px;
+  font-size: 15px;
+  padding: 5px 20px;
+  color: #a5a5a5;
+}
+.leftArea .gd li:hover {
+  color: #333;
+}
+.rightArea {
+  margin-top: 50px;
+  float: right;
+  display: inline;
+}
+.rightArea .departments div > li {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  border: solid 1px #E5E5E5;
+  background: #F5F5F5;
+  margin: 30px 15px 0;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.rightArea .departments div > li .num {
+  display: inline-block;
+  padding-left: 30px;
+}
+.rightArea .departments div .gs {
+  border: solid 1px #e5e5e5;
+  border-top: none;
+  margin: 15px;
+  margin-top: 0;
+  display: none;
+}
+.rightArea .departments div .gs .name {
+  float: left;
+  display: inline;
+  padding-right: 30px;
+}
+.rightArea .departments div .gs > li {
+  display: block;
+  background: #fff;
+  width: 90%;
+  line-height: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #dd0000;
+}
+.rightArea .departments div .gs .name {
+  width: 150px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 15px 20px;
+  color: #707173;
+  float: left;
+  display: inline;
+}
+.rightArea .departments div .gs .mood {
+  height: 30px;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 15px 20px;
+  color: #555;
+}
+.rightArea .departments div .gs .note {
+  font-weight: bold;
+  font-size: 17px;
+  margin: 15px 20px;
+  color: #555;
+}
+.rightArea .departments div .gs .note .noteCon {
+  font-size: 14px;
+  color: #555;
+}
+.rightArea .date {
+  font-size: 20px;
+  padding: 15px 20px;
+  color: #8298B6;
+}
+.rightArea .de {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #8298B6;
+  float: left;
+  display: inline;
+}
+.rightArea .name {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 15px 20px;
+  float: left;
+  display: inline;
+}
+.rightArea .note_nav {
+  margin-top: 80px;
+}
+.rightArea .note_nav div > li {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  border: solid 1px #E5E5E5;
+  background: #F5F5F5;
+  margin: 30px 15px 0;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.rightArea .note_nav .notess {
+  border: solid 1px #e5e5e5;
+  border-top: none;
+  height: auto;
+  padding: 10px 15px;
+  font-size: 17px;
+  line-height: 40px;
+  margin: 15px;
+  margin-top: 0;
+}
+.rightArea .note_nav .notess .con {
+  font-size: 14px;
+}
+.rightArea .note_nav .notess .comment {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.rightArea .note_nav .notess .comment a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+.rightArea .note_nav .notess .comment .all_com {
+  display: none;
+  font-size: 12px;
+}
+.rightArea .note_nav .notess .add_comment {
+  font-size: 14px;
+  border-top: solid 1px #e5e5e5;
+  height: 60px;
+  line-height: 60px;
+}
+.rightArea .note_nav .notess .add_comment a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+.rightArea .note_nav .notess .add_ssuccess {
+  background: #2ECC71;
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  position: fixed;
+  top: -4px;
+  right: 10px;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  z-index: 10;
+  opacity: 0.8;
+}

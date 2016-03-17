@@ -62,8 +62,9 @@ const User = React.createClass({
                     <div className="notess">
                         <div className="mo">心情：<img src={mood_img_src(note.mood)} alt=""/></div>
                         <div className="rizhi">日志：
-                            <div className="con"><span
-                                dangerouslySetInnerHTML={{__html:marked(note.content)}}></span></div>
+                            <div className="con">
+                                <span dangerouslySetInnerHTML={{__html:marked(note.content||'')}}></span>
+                            </div>
                         </div>
                         <div className="comment">
                             <a onClick={this.viewAllComment.bind(null,id)}>查看所有评论</a>
